@@ -40,6 +40,7 @@ h2 {
 h3 {
     font-weight: 400; /* רגיל משקל */
     font-size: 1.5vw;
+    color: #4a3065;
 }
 h4 {
     font-weight: 600; /* Semibold */
@@ -417,22 +418,18 @@ div > label > span {
     font-weight: bold;
 }
 
-/* =================== (Footer) עיצוב כותרת תחתונה =================== */
 footer {
+    padding: 150px 0 80px 0;     
     text-align: center;
-
-    /* מיקום הטקסט בין העצים, ודחיפת התוכן כלפי מעלה */
-    padding: 120px 0 20px 0;
-
-    margin-top: 50px;
-    border-top: 1px solid #e0e0e0;
-
-    /* הגדרת התמונה FooterImage.png כרקע ומניעת שכפול */
-    background-image: url('Images/FooterImage.png');
+    position: relative;
+    background-image: url("../Images/FooterImage.png");
     background-repeat: no-repeat;
     background-position: center bottom;
-    background-size: 100% auto;
+    background-size: 100% auto;          
+    padding-bottom: clamp(320px, 18vw, 450px);
 }
+
+
 
 footer p {
     margin: 5px 0;
@@ -452,5 +449,38 @@ footer a:hover {
     margin: 15px auto 0;
 }
 
+.date-layout {
+    background:#cfc5d2;
+    border-radius:36px;
+    padding:28px;
+    display:grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    grid-template-rows: 250px 1fr;
+    grid-template-areas:
+    "illustration budget dress-code"
+    "illustration tips   prep"
+    "link         link   link";
+    gap:24px;
+}
+
+.budget     { grid-area:budget; }
+.dress-code { grid-area:dress-code; }
+.tips       { grid-area:tips; }
+.prep       { grid-area:prep; }
+
+.budget, .dress-code, .tips, .prep {
+    background:#faf8f4;
+    border-radius:28px;
+    padding:10px;
+}
+
+.date-layout .link{
+    grid-area: link;          /* מציב בשורת ה־link */
+    justify-self: start;      /* יישור לימין ב־RTL */
+    align-self: end;          /* נדבק לתחתית השורה */
+    display: inline-block;
+    font-weight: 600;
+    margin-top: 8px;
+}
 
 
