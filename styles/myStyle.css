@@ -1,445 +1,366 @@
-/* (Google Fonts) ייבוא חיצוניים פונטים מגוגל */
-@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;800&display=swap'); /* [3, 4] */
+/* (Google Fonts) ייבוא פונטים חיצוניים מגוגל - תואם הנחיות */
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;800&display=swap'); /* [7] */
 
-/* =================== גלובליות והיררכיה =================== */
+/* =================== גלובליות והיררכיה - תואם הנחיות =================== */
 body {
-    direction: rtl; /* קביעת כיווניות מימין לשמאל */ /* [1] */
-    background-color: #fefbf5; /* צבע רקע כללי לאתר */ /* [1, 2] */
-    font-family: 'Assistant', sans-serif; /* הגדרת פונט ברירת מחדל גלובלי */ /* [2, 8, 9] */
+    direction: rtl; /* [8] */
+    background-color: #fefbf5; /* [8] */
+    font-family: 'Assistant', sans-serif; /* [9-11] */
 }
 
-/* (Container) יצירת מסגרת מרכזית (בהתאם להנחיית 1280 פיקסלים) */
 #container {
-    max-width: 1200px; /* רוחב מקסימלי למסגרת */
-    margin: 0 auto; /* מרכוז אופקי */ /* [2] */
-    padding: 0 25px; /* ריווח פנימי מהצדדים */ /* [10] */
+    max-width: 1200px;
+    margin: 0 auto; /* מרכוז אופקי של התוכן [6, 12] */
+    padding: 0 25px; /* [6, 13] */
 }
 
-/* =================== עיצוב כותרות (H1-H4) =================== */
-h1 {
-    font-weight: 800; /* Extrabold */
-    font-size: 3vw;
+/* =================== עיצוב כותרות (H1-H4) - תואם הנחיות =================== */
+h1, h2, h3, h4 {
     color: #4a3065;
-    text-align: center; /* [9] */
+    text-align: center; /* [11] */
 }
+
+h1 {
+    font-weight: 800; /* [14] */
+    font-size: 3em; /* שימוש ביחידות מידה יחסיות, אך pt/px גם תקין לפי הנחיות [11] */
+}
+
 h1 span {
-    font-size: 1.5vw;
-    font-weight: 400; /* משקל רגיל */ /* [11] */
-    display: block; /* [12, 13] */
-    margin-top: 10px;
+    font-size: 0.5em;
+    font-weight: 400;
+    display: block; /* [15] */
+    margin-top: 10px; /* [6] */
     color: #333;
 }
+
 h2 {
-    font-weight: 600; /* Extrabold */
-    font-size: 1.5vw;
-    color: #4a3065;
-    text-align: center;
-}
-h3 {
-    font-weight: 400; /* משקל רגיל */
-    font-size: 1.5vw;
-    color: #4a3065;
-}
-h4 {
-    font-weight: 600; /* Semibold */
-    font-size: 1.2vw;
+    font-weight: 600;
+    font-size: 1.5em;
 }
 
-/* =================== תפריט ניווט ראשי (nav) =================== */
+h3 {
+    font-weight: 400;
+    font-size: 1.5em;
+}
+
+h4 {
+    font-weight: 600;
+    font-size: 1.2em;
+}
+
+/* =================== תפריט ניווט ראשי (nav) - תואם הנחיות =================== */
 nav[aria-label="mainNav"] {
     width: 100%;
+    text-align: center; /* שינוי: דרך למרכז את התפריט ללא Flexbox */
 }
+
 nav[aria-label="mainNav"] > ul {
+    list-style: none; /* [16] */
+    margin: 0;
+    padding: 0;
+}
+
+nav[aria-label="mainNav"] > ul > li {
+    position: relative; /* [5] */
+    display: inline-block; /* שונה: הוחלף מ-flex ל-inline-block ליצירת תפריט אופקי [3, 17] */
+    margin: 0 9px; /* רווח בין פריטי התפריט */
+}
+
+nav[aria-label="mainNav"] > ul > li > a {
+    display: block; /* [16] */
+    padding: 10px 15px;
+    color: #4a3065;
+    text-decoration: none; /* [17] */
+    font-weight: 600;
+}
+
+nav[aria-label="mainNav"] > ul > li > a:hover {
+    color: #fe5374; /* [18, 19] */
+}
+
+/* לוגו */
+#logo {
+    display: block; /* הלוגו יהיה בשורה משלו */
+    margin-bottom: 20px;
+}
+
+#logo img {
+    height: 150px;
+    width: auto;
+}
+
+/* תפריטי משנה נפתחים - תואם הנחיות */
+.innerNav {
+    display: none; /* [4] */
     list-style: none;
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center; /* מרכוז הניווט הראשי */
-    align-items: center;
-    gap: 18px;
-    flex-wrap: wrap;
-}
-nav[aria-label="mainNav"] > ul > li {
-    position: relative; /* [14] */
-}
-nav[aria-label="mainNav"] > ul > li > a {
-    display: block;
-    padding: 10px 15px;
-    background: transparent;
-    color: #4a3065;
-    text-decoration: none; /* [15] */
-    border-radius: 6px;
-    font-weight: 600;
-    white-space: nowrap;
-    transition: color .15s; /* [16] */
-    font-size: 1.1vw;
-}
-/* הגדרת Hover כללית לקישורים פעילים (ורוד) */
-nav[aria-label="mainNav"] > ul > li > a:hover, nav[aria-label="mainNav"] > ul > li > a:focus {
-    color: #fe5374; /* [17] */
-}
-/* דריסת צבע ה-Hover לקישורים הראשיים הלא פעילים (שומר על הצבע המקורי) */
-a.navNoActive:hover, a.navNoActive:focus {
-    color: #4a3065 !important;
-    opacity: 0.55;
-    cursor: not-allowed;
+    position: absolute; /* [5, 20] */
+    top: 100%;
+    right: 0;
+    z-index: 1000; /* [21] */
+    min-width: 180px;
 }
 
-/* שאר קוד ה-CSS נשאר זהה לקוד שהצגתי בתשובה הקודמת... */
-/* לוגו */
-#logo > a {
-background: transparent !important;
-padding: 0 !important;
+nav[aria-label="mainNav"] > ul > li:hover > .innerNav {
+    display: block; /* [20] */
 }
-#logo img {
-display: block;
-height: 150px;
-width: auto;
-}
-/* (Dropdowns)  משנה תפריטי עיצוב  */
-.innerNav {
-display: none;
-list-style: none;
-margin: 0;
-padding: 0;
-position: absolute;
-top: 100%;
-right: 0;
-z-index: 1000;
-min-width: 180px; /* מצומצם מינימלי רוחב  */
-}
-nav[aria-label="mainNav"] > ul > li:hover > .innerNav, nav[aria-label="mainNav"] > ul > li:focus-within > .innerNav {
-display: block;
-}
+
 .innerNav > li > a {
-display: block;
-background: #F6E3D7;
-color: #1f2937;
-text-decoration: none;
-padding: 10px 14px;
-border-radius: 6px;
-box-shadow: 0 6px 18px rgba(0,0,0,.1);
-font-weight: 600;
-white-space: nowrap;
-transition: transform .05s, filter .15s;
-font-size: 1vw;
+    display: block;
+    background: #F6E3D7;
+    color: #1f2937;
+    text-decoration: none;
+    padding: 10px 14px;
+    font-weight: 600;
 }
-.innerNav > li > a:hover, .innerNav > li > a:focus {
-transform: translateY(-1px);
-filter: brightness(.98);
-}
-/* (noActive) פעילים לא  קישורים עיצוב  ( על חלים  .noActive ו- .navNoActive) */
-a.noActive, a.navNoActive {
-opacity: .55; /* דהוי */
-pointer-events: none; /* לחיצה מונע  */
-cursor: not-allowed;;
-}
-/* =================== (Breadcrumbs) לחם פירורי תפריט  =================== */
-.breadCrumbs {
-/* direction: rtl יורש מה -body */
-font-family: "Assistant", system-ui, sans-serif;
-font-size: .95vw;
-margin-bottom: 20px;
-margin-top: 55px;
-/*הלוגו למיקום להתאים כדי( שוליים ימין) שמאלה הזחה הוספת ***** */
-margin-right: 70px;
-}
+
+/* =================== תפריט פירורי לחם - תואם הנחיות =================== */
 .breadCrumbs ol {
-list-style: none;
-margin: 0;
-padding: 0;
-display: flex;
-flex-wrap: wrap;
-align-items: center;
-gap: 8px;
+    list-style: none; /* [16] */
+    padding: 0;
+    margin: 0;
 }
+
 .breadCrumbs li {
-display: inline-flex;
-align-items: center;
-white-space: nowrap;
-color: #374151;
+    display: inline; /* [20] */
+    font-size: 0.95em;
 }
-.breadCrumbs li + li::before {
-content: "";
-display: inline-block;
-width: 0;
-height: 0;
-border-top: 5px solid transparent;
-border-bottom: 5px solid transparent;
-border-right: 7px solid #94a3b8;
-margin-inline: 6px;
+
+.breadCrumbs li a {
+    color: #2aa198;
+    text-decoration: none;
 }
-.breadCrumbs a {
-color: #2aa198;
-text-decoration: none;
-transition: color .15s;
+
+.breadCrumbs li a:hover {
+    text-decoration: underline; /* [18] */
 }
-.breadCrumbs a:hover, .breadCrumbs a:focus {
-color: #178a81;
-text-decoration: underline;
+
+/* הוספת התו ">" באמצעות pseudo-element, תואם הנחיות [20, 22] */
+.breadCrumbs li + li:before {
+    content: " > ";
+    padding: 0 8px;
+    color: #94a3b8;
 }
+
 .breadCrumbs [aria-current="page"] {
-font-weight: 700;
-pointer-events: none;
+    font-weight: 700;
 }
-/* =================== (main) הראשי התוכן אזור  =================== */
+
+
+/* =================== אזור התוכן הראשי (main) =================== */
 .page-content {
-padding-top: 80px; /* הלחם פירורי הסתרת בעיית לפתרון הוגדל  */
-padding-bottom: 40px;
+    padding-top: 80px;
+    padding-bottom: 40px;
 }
-/*וטפסים כלליים רכיבים =================== */
-/* (action-button) לפעולה קריאה כפתורי עיצוב  */
+
+/* =================== רכיבים כלליים - תואם הנחיות =================== */
 .action-button {
-display: inline-block;
-padding: 12px 28px;
-font-family: 'Assistant', sans-serif;
-font-size: 1.25vw;
-font-weight: 700;
-color: #fff;
-background-color: #fe5374;
-text-align: center;
-text-decoration: none;
-border-radius: 8px;
-border: none;
-transition: background-color 0.2s;
-cursor: pointer;
-width: 150px;
-display: block;
-margin: 0 auto;
+    display: inline-block; /* [3] */
+    padding: 12px 28px;
+    font-family: 'Assistant', sans-serif;
+    font-size: 1.25em;
+    font-weight: 700;
+    color: #fff;
+    background-color: #fe5374;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    width: 150px;
+    margin: 0 auto;
 }
+
 .action-button:hover {
-background-color: #e44a67;
+    background-color: #e44a67; /* [18] */
 }
+
+/* קישורים לא פעילים - תואם הנחיות [21] */
+.noActive {
+    color: #4a3065 !important;
+    background-color: #e0e0e0 !important;
+}
+
 .centered-image {
-display: block;
-margin: 30px auto;
-max-width: 100%;
-height: auto;
+    display: block;
+    margin: 30px auto;
+    max-width: 100%;
+    height: auto;
 }
+
 .home-image {
-max-width: 350px;
+    width: 350px; /* שימוש ב-width במקום max-width כדי לשמור על תאימות פשוטה יותר */
 }
+
 .choice-image {
-max-width: 500px;
+    width: 500px;
 }
+
 .home-call-to-action {
-text-align: center;
+    text-align: center;
 }
+
 .prompt-text {
-font-size: 1.2vw;
-margin-bottom: 10px;
+    font-size: 1.2em;
+    margin-bottom: 10px;
 }
+
 .choice-buttons {
-display: flex;
-justify-content: center;
-align-items: center;
-gap: 30px;
-margin-top: 20px;
+    text-align: center; /* שונה: דרך פשוטה למרכז את הכפתורים */
 }
-.choice-buttons > * {
-flex: 0 0 auto;
-margin: 0;
+
+.choice-buttons .action-button {
+    margin: 0 15px; /* רווח בין הכפתורים */
 }
-.action-button {
-display: inline-block;
-margin: 0;
-width: 180px;
-}
-/*תוכן אזורי  בתוך לרשימות ריווח איפוס */
-.budget ul, .dress-code ul, .prep ul, .tips ul {
-padding-right: 20px;
-}
-/* (icon-grid) האייקונים רשת עיצוב  */
+
+/* רשת האייקונים - שונה: הוחלף מ-Flexbox ל-inline-block */
 .icon-grid {
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-gap: 30px;
-padding: 40px 0;
+    text-align: center; /* מרכוז האלמנטים הפנימיים */
 }
 .icon-item {
-text-align: center;
-text-decoration: none;
-color: #4a3065;
-width: 200px;
+    display: inline-block; /* [3] */
+    width: 200px;
+    text-decoration: none;
+    color: #4a3065;
+    margin: 15px; /* רווח בין האייקונים */
+    vertical-align: top; /* יישור לחלק העליון */
 }
+
 .icon-item img {
-width: 150px;
-height: 150px;
-object-fit: cover;
-border-radius: 15px;
-border: 3px solid transparent;
-transition: border-color 0.3s;
+    width: 150px;
+    height: 150px;
+    border: 3px solid transparent; /* [12] */
+    transition: border-color 0.3s; /* שימוש באנימציה - תואם הנחיות [23, 24] */
 }
+
 .icon-item:hover img {
-border-color: #fe5374;
+    border-color: #fe5374; /* [18] */
 }
+
 .icon-item h3 {
-margin-top: 20px;
-font-size: 1.2vw;
+    margin-top: 20px;
+    font-size: 1.2em;
 }
-/* =================== (site-map) האתר מפת עיצוב  =================== */
-.site-map, .site-map ul {
-list-style: none;
-margin: 0;
-padding: 0;
-}
-.site-map > li:has(> ul) {
-font-size: 0vw;
-line-height: 0;
-}
-.site-map {
-display: flex;
-flex-wrap: wrap;
-gap: 18px;
-justify-content: center;
-align-items: flex-start;
-}
-/*אנכי טור –  הפנימי ULה־ */
-.site-map > li > ul {
-display: flex;
-flex-direction: column;
-}
-.site-map a {
-display: block;
-background: #fff;
-border: 2px solid #e5e5e5;
-border-radius: 12px;
-padding: 20px;
-text-align: center;
-font-size: 1.1vw;
-font-weight: 500;
-color: #4a3065;
-text-decoration: none;
-box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-}
-.site-map a:hover {
-background: #fef0f3;
-border-color: #fe5374;
-color: #fe5374;
-}
-a.main{
-font-weight: 610;
-}
-/*אודות דף עיצוב( צוות תמונות)  =================== */
+
+/* =================== דף אודות - פרופילים =================== */
 .team-profiles {
-display: flex;
-justify-content: center;
-gap: 50px;
-padding: 40px 0;
-flex-wrap: wrap;
+    text-align: center; /* שונה: דרך פשוטה למרכז את הפרופילים */
 }
+
 .profile-card {
-text-align: center;
+    display: inline-block; /* [3] */
+    margin: 0 25px; /* רווח */
+    text-align: center;
 }
+
 .profile-img {
-width: 150px;
-height: 150px;
-border-radius: 50%;
-display: block;
+    width: 150px;
+    height: 150px;
+    display: block;
+    margin: 0 auto;
 }
+
 .profile-card h4 {
-margin-top: 10px;
-color: #4a3065;
+    margin-top: 10px;
+    color: #4a3065;
 }
-/* =================== (Form) קשר צור דף עיצוב  =================== */
+
+/* =================== דף צור קשר (Form) - תואם הנחיות =================== */
 form {
-max-width: 600px;
-margin: 0 auto;
-padding: 20px;
-border: 1px solid #e0e0e0;
-border-radius: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #e0e0e0; /* [12] */
 }
-form div {
-margin-bottom: 15px;
+
+form div, fieldset {
+    margin-bottom: 15px; /* [6] */
 }
+
 input[type="text"], input[type="email"], input[type="date"], textarea {
-width: 100%;
-padding: 10px;
-margin-top: 5px;
-box-sizing: border-box;
-border: 1px solid #ccc;
-border-radius: 4px;
-font-family: 'Assistant', sans-serif;
-font-size: 1vw;
+    width: 100%;
+    padding: 10px; /* [13] */
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    font-family: 'Assistant', sans-serif;
+    font-size: 1em;
 }
-textarea {
-resize: vertical;
-}
+
 label {
-display: block;
-font-weight: 600;
-margin-bottom: 5px;
+    display: block; /* [15] */
+    font-weight: 600;
+    margin-bottom: 5px;
 }
+
 fieldset {
-border: 1px solid #ccc;
-padding: 15px;
-margin-bottom: 20px;
-border-radius: 8px;
+    border: 1px solid #ccc;
+    padding: 15px;
 }
+
 legend {
-font-weight: 600;
-padding: 0 10px;
-color: #4a3065;
+    font-weight: 600;
+    padding: 0 10px;
+    color: #4a3065;
 }
+
 div > label > span {
-color: red;
-font-size: 1.2vw;
-font-weight: bold;
+    color: red;
+    font-weight: bold;
 }
-footer {
-padding: 150px 0 80px 0;
-text-align: center;
-position: relative;
-background-image: url("../Images/Logo and main images/FooterImage.png");
-background-repeat: no-repeat;
-background-position: center bottom;
-background-size: 100% auto;
-padding-bottom: clamp(320px, 18vw, 450px);
-}
-footer p {
-margin: 5px 0;
-}
-footer a {
-color: #4a3065;
-text-decoration: none;
-}
-footer a:hover {
-text-decoration: underline;
-}
-#HITlogo {
-height: 100px;
-width: auto;
-display: block;
-margin: 15px auto 0;
-}
+
+/* =================== פריסת תוכן דייט (.date-layout) =================== */
+/* שונה: הוחלף מ-Grid למבנה של inline-block */
 .date-layout {
-background:#cfc5d2;
-border-radius:36px;
-padding:28px;
-display:grid;
-grid-template-columns: 1.2fr 1fr 1fr;
-grid-template-rows: 250px 1fr;
-grid-template-areas:
-"illustration budget dress-code"
-"illustration tips   prep"
-"link         link   link";
-gap:24px;
+    background: #cfc5d2;
+    padding: 28px;
+    font-size: 0; /* טריק למניעת רווחים לא רצויים ב-inline-block */
 }
-.budget     { grid-area:budget; }
-.dress-code { grid-area:dress-code; }
-.tips       { grid-area:tips; }
-.prep       { grid-area:prep; }
+
+.date-layout div {
+    font-size: 1rem; /* איפוס גודל הפונט שנקבע באב */
+}
+
 .budget, .dress-code, .tips, .prep {
-background:#faf8f4;
-border-radius:28px;
-padding:10px;
+    display: inline-block; /* [3] */
+    width: 48%; /* חלוקה לשתי עמודות */
+    margin: 1%; /* רווח קטן בין התיבות */
+    vertical-align: top;
+    background: #faf8f4;
+    padding: 10px;
+    box-sizing: border-box; /* מבטיח שה-padding לא ישפיע על הרוחב הכולל */
 }
-.date-layout .link{
-grid-area: link;          /* ה־ בשורת מציב link */
-justify-self: start;      /*  ב־ לימין  יישור RTL */
-align-self: end;          /* השורה לתחתית נדבק  */
-display: inline-block;
-font-weight: 600;
-margin-top: 8px;
+
+.date-layout .links {
+    display: block; /* [15] */
+    font-weight: 600;
+    margin-top: 8px;
+}
+
+/* =================== Footer - תואם הנחיות =================== */
+footer {
+    padding: 150px 0 80px 0;
+    text-align: center;
+    position: relative; /* [5] */
+    background-image: url("../Images/Logo and main images/FooterImage.png"); /* [14] */
+    background-repeat: no-repeat; /* [14] */
+    background-position: center bottom; /* [25] */
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+footer a {
+    color: #4a3065;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+#HITlogo {
+    height: 100px;
+    width: auto;
+    display: block;
+    margin: 15px auto 0;
 }
