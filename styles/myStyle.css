@@ -73,7 +73,7 @@ nav[aria-label="mainNav"] > ul > li {
 nav[aria-label="mainNav"] > ul > li > a {
     display: block; 
     padding: 10px 15px;
-    color: #ffffff; /* צבע טקסט לבן */
+    color: #fefbf5; /* צבע טקסט כמו הרקע של האתר */
     text-decoration: none; 
     font-weight: 600;
 }
@@ -367,3 +367,4 @@ footer a:hover {
     display: block;
     margin: 15px auto 0;
 }
+
