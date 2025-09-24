@@ -5,6 +5,8 @@ body {
     direction: rtl;
     background-color: #fefbf5;
     font-family: 'Assistant', sans-serif;
+    width: 1280px;
+    margin: 0 auto;
 }
 
 #container {
@@ -230,7 +232,7 @@ a.noActive, a.navNoActive, .icon-itemnoActive{
 }
 
 .budget ul, .dress-code ul, .prep ul, .tips ul {
-    padding-right: 20px;
+    padding-right: 40px;
 }
 
 .icon-grid {
@@ -407,6 +409,7 @@ div > label > span {
 .budget, .dress-code, .tips, .prep {
     display: inline-block;
     width: 48%;
+    height: 250px;
     margin: 1%;
     vertical-align: top;
     background: #faf8f4;
@@ -422,16 +425,18 @@ div > label > span {
 }
 
 footer {
-        text-align: center;
+    text-align: center;
     position: relative;
     background-image: url("../Images/Logo and main images/FooterImage.png");
     background-repeat: no-repeat;
     background-position: center bottom;
     background-size: 100% auto;
+    margin-top: 230px;
     padding-bottom: max(320px, min(18vw, 450px));/* שימוש ב-max/min כמחליף ל-clamp:
    min(18vw, 450px) בוחר את הקטן → לא עובר 450px.
    max(320px, …) בוחר את הגדול → לא יורד מ-320px.
    כך מתקבל ערך רספונסיבי בין 320px ל-450px לפי 18vw. */
+    
 }
 
 footer p {
