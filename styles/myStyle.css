@@ -314,3 +314,42 @@ footer a:hover {
     display: block;
     margin: 15px auto 0;
 }
+
+/* =================== מפת אתר =================== */
+.sitemap-container {
+    position: relative; /* מגדיר את המכולה כעוגן למיקום הרשימה */
+    max-width: 800px; /* קובע רוחב מקסימלי, ניתן לשנות לפי גודל התמונה */
+    margin: 40px auto; /* ממקם את כל המכולה במרכז העמוד */
+}
+
+.sitemap-background-image {
+    display: block; /* מבטיח שהתמונה תתנהג כבלוק */
+    width: 100%; /* גורם לתמונה להתאים את עצמה לרוחב המכולה */
+    height: auto;
+}
+
+.sitemap-links {
+    position: absolute; /* מוציא את הרשימה מהזרימה הרגילה וממקם אותה ביחס למכולה */
+    top: 0;
+    right: 0;
+    width: 100%; /* גורם לרשימה לתפוס את כל רוחב המכולה */
+    height: 100%;
+    margin: 0;
+    padding: 50px 0; /* ריווח פנימי עליון ותחתון */
+    box-sizing: border-box;
+    list-style-type: none; /* מסיר את התבליטים מהרשימה */
+    text-align: center; /* ממקם את הטקסט במרכז */
+    z-index: 2; /* מוודא שהקישורים יופיעו מעל התמונה */
+}
+
+.sitemap-links, .sitemap-links a {
+    color: #4a3065; /* צבע טקסט כהה לקריאות */
+    text-decoration: none;
+    font-weight: 600;
+    line-height: 2; /* מגדיל את המרווח בין השורות */
+}
+
+.sitemap-links ul {
+    list-style-type: none;
+    padding-right: 20px;
+}
