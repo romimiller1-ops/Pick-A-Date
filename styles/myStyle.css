@@ -128,8 +128,9 @@ nav[aria-label="mainNav"] > ul > li:hover > .innerNav, nav[aria-label="mainNav"]
 }
 
 
-a.noActive, a.navNoActive {
-    opacity: .55;
+a.noActive, a.navNoActive, .icon-itemnoActive{
+    opacity: .55; 
+    pointer-events: none; 
     cursor: not-allowed;;
 }
 
@@ -175,7 +176,6 @@ a.noActive, a.navNoActive {
     font-weight: 700;
 }
 
-/* =================== תוכן עמוד =================== */
 .page-content {
     padding-top: 80px;
     padding-bottom: 40px;
@@ -229,28 +229,29 @@ a.noActive, a.navNoActive {
     margin: 0 15px;
 }
 
-/* איפוס ריווח לרשימות בתוך אזורי תוכן */
 .budget ul, .dress-code ul, .prep ul, .tips ul {
     padding-right: 20px;
 }
 
-/* (icon-grid) עיצוב רשת האייקונים */
 .icon-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 30px;
+    justify-content: center;
+    gap: 40px;
     padding: 40px 0;
+    align-items: center;
 }
-.icon-item {
+.icon-item, .icon-itemnoActive {
     text-align: center;
 }
 
-.icon-item {
+.icon-item, .icon-itemnoActive {
     display: inline-block;
     width: 200px;
     text-decoration: none;
     color: #4a3065;
     margin: 15px;
+    font-size: 10vw; 
 }
 
 .icon-item img {
@@ -260,11 +261,17 @@ a.noActive, a.navNoActive {
     transition: border-color 0.3s;
 }
 
+.icon-itemnoActive img{
+    width: 150px;
+    height: 150px;
+    cursor: not-allowed;
+}
+
 .icon-item:hover img {
     border-color: #fe5374;
 }
 
-.icon-item h3 {
+.icon-item h3, .icon-itemnoActive h3{
     margin-top: 20px;
     font-size: 1.2vw;
 }
