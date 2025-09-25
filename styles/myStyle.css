@@ -20,7 +20,7 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-    font-weight: 800; /* Extrabold */
+    font-weight: 800;
     font-size: 3vw;
     margin-bottom: 0;
     margin-top:0;
@@ -62,7 +62,7 @@ nav[aria-label="mainNav"] > ul {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center; /* מרכוז הניווט הראשי */
+    justify-content: center;
     align-items: center;
     gap: 18px;
     flex-wrap: wrap;
@@ -78,7 +78,7 @@ nav[aria-label="mainNav"] > ul > li > a {
     background: transparent;
     color: #4a3065;
     text-decoration: none;
-    border-radius: 6px;/* לא נלמד- על מנת לייצר עיגול פינות */
+    border-radius: 6px;/* על מנת לייצר עיגול פינות */
     font-weight: 600;
     white-space: nowrap;
     transition: color .15s;
@@ -139,7 +139,6 @@ a.noActive, a.navNoActive, .icon-itemnoActive{
 
 .breadCrumbs {
     font-size: .95vw;
-    /* ***** הוספת הזחה שמאלה (ימין שוליים) כדי להתאים למיקום הלוגו ***** */
     margin-right: 70px;
 }
 .breadCrumbs ol {
@@ -281,20 +280,17 @@ a.noActive, a.navNoActive, .icon-itemnoActive{
     font-size: 1.2vw;
 }
 
-/* =================== (site-map) עיצוב מפת האתר =================== */
 .site-map, .site-map ul {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 .site-map > li:has(> ul) {
-    font-size: 0vw;
     line-height: 0;
 }
 
 .site-map {
     display: flex;
-    flex-wrap: wrap;
     gap: 18px;
     justify-content: center;
     align-items: flex-start;
@@ -350,7 +346,6 @@ a.main{
     color: #4a3065;
 }
 
-/* =================== דף צור קשר (Form) =================== */
 form {
     max-width: 600px;
     margin: 0 auto;
@@ -413,7 +408,7 @@ div > label > span, legend>span {
     width: 48%;
     height: 250px;
     margin: 1%;
-    vertical-align: top;
+    vertical-align: top;/* תכונה שמגדירה יישור אנכי של רכיבים ברמת שורה או של תוכן בתוך תא טבלה ביחס לקו הבסיס או גובה השורה */
     background: #faf8f4;
     padding: 10px;
     box-sizing: border-box;
@@ -430,7 +425,6 @@ footer {
     text-align: center;
     position: relative;
     background-image: url("../Images/Logo and main images/FooterImage.png");
-    background-repeat: no-repeat;
     background-position: center bottom;
     background-size: 100% auto;
     margin-top: 230px;
@@ -469,3 +463,14 @@ margin-right: 235px;
     text-align: center;
     margin:30px;
 }
+
+#aboutMap{
+    width: fit-content; /* מצמצם לרוחב הטקסט */
+    margin-right: 515px;
+    padding: 12px 16px;
+    border: 1px solid #ccc;        
+    border-radius: 8px;
+    list-style: none;
+    font-weight: bold;
+}
+
