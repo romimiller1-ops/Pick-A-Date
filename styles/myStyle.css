@@ -233,7 +233,7 @@ a.noActive, a.navNoActive, .icon-itemnoActive{
 
 .budget ul, .dress-code ul, .prep ul, .tips ul {
     padding-right: 40px;
-    font-size:1.5vw;
+    font-size:1.2vw;
 }
 
 
@@ -424,7 +424,7 @@ div > label > span, legend>span {
 footer {
     text-align: center;
     position: relative;
-    background-image: url("../Images/Logo and main images/FooterImage.png");
+    background-image: url("../Images/Logo and main images/FooterImage.png");/*על מנת שהכיתוב של הפוטר יהיה בין העצים, שתלנו אותה כרקע דרך הCSS */
     background-position: center bottom;
     background-size: 100% auto;
     margin-top: 230px;
@@ -466,11 +466,20 @@ margin-right: 235px;
 
 #aboutMap{
     width: fit-content; /* מצמצם לרוחב הטקסט */
-    margin-right: 515px;
     padding: 12px 16px;
     border: 1px solid #ccc;        
     border-radius: 8px;
     list-style: none;
-    font-weight: bold;
+    font-weight: normal;
+    color: black;
+    margin-right: 530px;
 }
+
+
+
+#aboutMap a:hover{
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
 
