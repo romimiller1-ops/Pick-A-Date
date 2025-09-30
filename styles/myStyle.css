@@ -1,57 +1,53 @@
+﻿/* (Google Fonts) מגוגל פונטים חיצוניים ייבוא */
 @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;800&display=swap');
 
+/* =================== גלובליות והיררכיה =================== */
 
 body {
-    direction: rtl;
-    background-color: #fefbf5;
-    font-family: 'Assistant', sans-serif;
-    width: 1280px;
-    margin: 0 auto;
+    direction: rtl; /* קביעת כיווניות מימין לשמאל */
+    background-color: #fefbf5; /* צבע רקע כללי לאתר */
+    font-family: 'Assistant', sans-serif; /* הגדרת פונט ברירת מחדל גלובלי */
 }
 
+/* (Container) יצירת מסגרת מרכזית (בהתאם להנחיית 1280 פיקסלים) */
 #container {
-    
-    padding: 0 25px;
+    max-width: 1200px; /* רוחב מקסימלי למסגרת */
+    margin: 0 auto; /* מרכוז אופקי [1] */
+    padding: 0 25px; /* ריווח פנימי מהצדדים */
 }
 
-h1, h2, h3, h4 {
+/* =================== (H1-H4) כותרות עיצוב =================== */
+
+h1 {
+    font-weight: 800; /* Extrabold */
+    font-size: 3vw;
     color: #4a3065;
     text-align: center;
 }
-
-h1 {
-    font-weight: 800;
-    font-size: 3vw;
-    margin-bottom: 0;
-    margin-top:0;
-
-}
-
 h1 span {
     font-size: 1.5vw;
-    font-weight: 400; 
+    font-weight: 400; /* רגיל משקל */
     display: block;
     margin-top: 10px;
     color: #333;
 }
-
 h2 {
-    font-weight: 600;
+    font-weight: 600; /* Extrabold */
     font-size: 1.5vw;
     color: #4a3065;
     text-align: center;
 }
-
 h3 {
-    font-weight: 400; 
+    font-weight: 400; /* רגיל משקל */
     font-size: 1.5vw;
     color: #4a3065;
 }
-
 h4 {
-    font-weight: 600;
+    font-weight: 600; /* Semibold */
     font-size: 1.2vw;
 }
+
+/* =================== (nav) ראשי ניווט תפריט =================== */
 
 nav[aria-label="mainNav"] {
     width: 100%;
@@ -62,7 +58,7 @@ nav[aria-label="mainNav"] > ul {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
+    justify-content: center; /* מרכוז הניווט הראשי */
     align-items: center;
     gap: 18px;
     flex-wrap: wrap;
@@ -78,27 +74,29 @@ nav[aria-label="mainNav"] > ul > li > a {
     background: transparent;
     color: #4a3065;
     text-decoration: none;
-    border-radius: 6px;/* על מנת לייצר עיגול פינות */
+    border-radius: 6px;
     font-weight: 600;
     white-space: nowrap;
     transition: color .15s;
-    font-size: 1.1vw;
+    font-size: 1.1vw; 
 }
 
+/* הגדרת Hover כללית לקישורים פעילים (ורוד) */
 nav[aria-label="mainNav"] > ul > li > a:hover, nav[aria-label="mainNav"] > ul > li > a:focus {
     color: #fe5374;
 }
 
+/* דריסת צבע ה-Hover לקישורים הראשיים הלא פעילים (שומר על הצבע המקורי) */
 a.navNoActive:hover, a.navNoActive:focus {
-    color: #4a3065;
-    opacity: 0.55;
+    color: #4a3065 !important;
+    opacity: 0.55; 
     cursor: not-allowed;
 }
 
-
+/* לוגו */
 #logo > a {
-    background: transparent;
-    padding: 0;
+    background: transparent !important;
+    padding: 0 !important;
 }
 #logo img {
     display: block;
@@ -106,6 +104,7 @@ a.navNoActive:hover, a.navNoActive:focus {
     width: auto;
 }
 
+/* (Dropdowns) עיצוב תפריטי משנה */
 .innerNav {
     display: none;
     list-style: none;
@@ -114,8 +113,8 @@ a.navNoActive:hover, a.navNoActive:focus {
     position: absolute;
     top: 100%;
     right: 0;
-    background-color: #cfc5d2;
-    width:125px;
+    z-index: 1000;
+    min-width: 180px; /* רוחב מינימלי מצומצם */
 }
 nav[aria-label="mainNav"] > ul > li:hover > .innerNav, nav[aria-label="mainNav"] > ul > li:focus-within > .innerNav {
     display: block;
@@ -123,179 +122,207 @@ nav[aria-label="mainNav"] > ul > li:hover > .innerNav, nav[aria-label="mainNav"]
 
 .innerNav > li > a {
     display: block;
+    background: #F6E3D7;
     color: #1f2937;
     text-decoration: none;
     padding: 10px 14px;
     border-radius: 6px;
+    box-shadow: 0 6px 18px rgba(0,0,0,.1);
     font-weight: 600;
+    white-space: nowrap;
     transition: transform .05s, filter .15s;
     font-size: 1vw;
 }
 
-a.noActive, a.navNoActive, .icon-itemnoActive{
-    opacity: .55; 
-    cursor: not-allowed;
+.innerNav > li > a:hover, .innerNav > li > a:focus {
+    transform: translateY(-1px);
+    filter: brightness(.98);
 }
 
+/* (noActive) עיצוב קישורים לא פעילים (חלים על .noActive ו- .navNoActive) */
+a.noActive, a.navNoActive {
+    opacity: .55; /* דהוי */
+    pointer-events: none; /* מונע לחיצה */
+    cursor: not-allowed;
+    
+}
+
+/* =================== (Breadcrumbs) תפריט פירורי לחם =================== */
+
 .breadCrumbs {
+    /* direction: rtl מה יורש-body */
+    font-family: "Assistant", system-ui, sans-serif;
     font-size: .95vw;
+    margin-bottom: 20px; 
+    margin-top: 55px;
+
+    /* ***** הוספת הזחה שמאלה (ימין שוליים) כדי להתאים למיקום הלוגו ***** */
     margin-right: 70px;
 }
 .breadCrumbs ol {
     list-style: none;
+    margin: 0;
     padding: 0;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     gap: 8px;
 }
-
 .breadCrumbs li {
-    display: inline;
-    font-size: 0.95em;
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+    color: #374151;
 }
-
-.breadCrumbs li a {
+.breadCrumbs li + li::before {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-right: 7px solid #94a3b8;
+    margin-inline: 6px;
+}
+.breadCrumbs a {
     color: #2aa198;
     text-decoration: none;
     transition: color .15s;
 }
-
-.breadCrumbs li a:hover {
+.breadCrumbs a:hover, .breadCrumbs a:focus {
+    color: #178a81;
     text-decoration: underline;
 }
-
-.breadCrumbs li + li:before {
-    content: " > ";
-    padding: 0 8px;
-    color: #94a3b8;
-}
-
 .breadCrumbs [aria-current="page"] {
     font-weight: 700;
+    pointer-events: none;
 }
 
+/* =================== (main) אזור התוכן הראשי =================== */
 .page-content {
-    padding-top: 50px;
+    padding-top: 80px; /* הוגדל לפתרון בעיית הסתרת פירורי הלחם */
     padding-bottom: 40px;
 }
 
+/* =================== רכיבים כלליים וטפסים =================== */
+
+/* (action-button) עיצוב כפתורי קריאה לפעולה */
 .action-button {
     display: inline-block;
     padding: 12px 28px;
+    font-family: 'Assistant', sans-serif;
     font-size: 1.25vw;
     font-weight: 700;
     color: #fff;
     background-color: #fe5374;
     text-align: center;
     text-decoration: none;
+    border-radius: 8px;
     border: none;
     transition: background-color 0.2s;
     cursor: pointer;
     width: 150px;
+    display: block; 
     margin: 0 auto;
-    align-items: center;
 }
-
 .action-button:hover {
     background-color: #e44a67;
 }
 
-.centered-image, .centered-imagehome-image {
+.centered-image {
     display: block;
-    margin-right: 430px;
+    margin: 30px auto;
     max-width: 100%;
     height: auto;
 }
-
-
-.home-image, .centered-imagehome-image{
-    width: 350px;
+.home-image {
+    max-width: 350px;
 }
-
 .choice-image {
-    width: 500px;
+    max-width: 500px;
 }
-
-.home-call-to-action, .choice-buttons {
+.home-call-to-action {
     text-align: center;
 }
-
 .prompt-text {
     font-size: 1.2vw;
     margin-bottom: 10px;
 }
-
-.choice-buttons .action-button {
-    margin: 0 15px;
-    
+.choice-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 20px;
 }
 
+.choice-buttons > * {
+    flex: 0 0 auto; 
+    margin: 0; 
+}
+
+
+.action-button {
+    display: inline-block; 
+    margin: 0;
+    width: 180px; 
+}
+
+/* איפוס ריווח לרשימות בתוך אזורי תוכן */
 .budget ul, .dress-code ul, .prep ul, .tips ul {
-    padding-right: 40px;
-    font-size:1.2vw;
+    padding-right: 20px;
 }
 
-
+/* (icon-grid) עיצוב רשת האייקונים */
 .icon-grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 40px;
+    gap: 30px;
     padding: 40px 0;
-    align-items: center;
 }
-.icon-item, .icon-itemnoActive {
+.icon-item {
     text-align: center;
-}
-
-.icon-item, .icon-itemnoActive {
-    display: inline-block;
-    width: 200px;
     text-decoration: none;
     color: #4a3065;
-    margin: 15px;
-    font-size: 10vw; 
+    width: 200px;
 }
-
 .icon-item img {
     width: 150px;
     height: 150px;
+    object-fit: cover;
+    border-radius: 15px;
     border: 3px solid transparent;
     transition: border-color 0.3s;
 }
-
-.icon-itemnoActive img{
-    width: 150px;
-    height: 150px;
-    cursor: not-allowed;
-}
-
 .icon-item:hover img {
     border-color: #fe5374;
 }
-
-.icon-item h3, .icon-itemnoActive h3{
+.icon-item h3 {
     margin-top: 20px;
     font-size: 1.2vw;
 }
 
+/* =================== (site-map) עיצוב מפת האתר =================== */
 .site-map, .site-map ul {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 .site-map > li:has(> ul) {
+    font-size: 0vw;
     line-height: 0;
 }
 
 .site-map {
     display: flex;
-    gap: 18px;
+    flex-wrap: wrap;
+    gap: 18px;              
     justify-content: center;
     align-items: flex-start;
 }
 
+/* ה־UL הפנימי – טור אנכי */
 .site-map > li > ul {
     display: flex;
     flex-direction: column;
@@ -312,6 +339,7 @@ a.noActive, a.navNoActive, .icon-itemnoActive{
     font-weight: 500;
     color: #4a3065;
     text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
 }
 .site-map a:hover {
     background: #fef0f3;
@@ -323,29 +351,29 @@ a.main{
     font-weight: 610;
 }
 
+/* =================== (תמונות צוות) עיצוב דף אודות =================== */
 .team-profiles {
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    padding: 40px 0;
+    flex-wrap: wrap;
 }
-
 .profile-card {
-    display: inline-block;
-    margin: 0 25px;
     text-align: center;
 }
-
 .profile-img {
     width: 150px;
     height: 150px;
     border-radius: 50%;
     display: block;
-    margin: 0 auto;
 }
-
 .profile-card h4 {
     margin-top: 10px;
     color: #4a3065;
 }
 
+/* =================== (Form) עיצוב דף צור קשר =================== */
 form {
     max-width: 600px;
     margin: 0 auto;
@@ -353,97 +381,64 @@ form {
     border: 1px solid #e0e0e0;
     border-radius: 10px;
 }
-
-form div, fieldset {
+form div {
     margin-bottom: 15px;
 }
-
 input[type="text"], input[type="email"], input[type="date"], textarea {
-    width: 99%;
+    width: 100%;
+    padding: 10px;
     margin-top: 5px;
+    box-sizing: border-box;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-family: 'Assistant', sans-serif;
     font-size: 1vw;
-    padding-bottom: 8px;
 }
-
+textarea {
+    resize: vertical;
+}
 label {
+    display: block;
     font-weight: 600;
     margin-bottom: 5px;
 }
-
 fieldset {
     border: 1px solid #ccc;
     padding: 15px;
     margin-bottom: 20px;
     border-radius: 8px;
 }
-
 legend {
     font-weight: 600;
     padding: 0 10px;
     color: #4a3065;
 }
-
-div > label > span, legend>span {
+div > label > span {
     color: red;
     font-size: 1.2vw;
     font-weight: bold;
 }
 
-.date-layout {
-    background: #cfc5d2;
-    padding: 28px;
-    font-size: 0;
-    border-radius: 8px;
-}
-
-.date-layout div {
-    font-size: 1vw;
-}
-
-.budget, .dress-code, .tips, .prep {
-    display: inline-block;
-    width: 48%;
-    height: 250px;
-    margin: 1%;
-    vertical-align: top;/* תכונה שמגדירה יישור אנכי של רכיבים ברמת שורה או של תוכן בתוך תא טבלה ביחס לקו הבסיס או גובה השורה */
-    background: #faf8f4;
-    padding: 10px;
-    box-sizing: border-box;
-    border-radius: 8px;
-}
-
-.date-layout .links {
-    display: block;
-    font-weight: 600;
-    margin-top: 8px;
-}
-
 footer {
+    padding: 150px 0 80px 0;     
     text-align: center;
     position: relative;
-    background-image: url("../Images/Logo and main images/FooterImage.png");/*על מנת שהכיתוב של הפוטר יהיה בין העצים, שתלנו אותה כרקע דרך הCSS */
+    background-image: url("../Images/FooterImage.png");
+    background-repeat: no-repeat;
     background-position: center bottom;
-    background-size: 100% auto;
-    margin-top: 230px;
-    padding-bottom: max(350px, min(18vw, 450px));/* שימוש ב-max/min כמחליף ל-clamp:
-   min(18vw, 450px) בוחר את הקטן → לא עובר 450px.
-   max(320px, …) בוחר את הגדול → לא יורד מ-320px.
-   כך מתקבל ערך רספונסיבי בין 320px ל-450px לפי 18vw. */
-    
+    background-size: 100% auto;          
+    padding-bottom: clamp(320px, 18vw, 450px);
 }
+
+
 
 footer p {
     margin: 5px 0;
 }
-
 footer a {
     color: #4a3065;
     text-decoration: none;
 }
-
 footer a:hover {
     text-decoration: underline;
 }
@@ -455,31 +450,38 @@ footer a:hover {
     margin: 15px auto 0;
 }
 
-#send{
-margin-right: 235px;
+.date-layout {
+    background:#cfc5d2;
+    border-radius:36px;
+    padding:28px;
+    display:grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    grid-template-rows: 250px 1fr;
+    grid-template-areas:
+    "illustration budget dress-code"
+    "illustration tips   prep"
+    "link         link   link";
+    gap:24px;
 }
 
-.descriptionabuot{
-    text-align: center;
-    margin:30px;
+.budget     { grid-area:budget; }
+.dress-code { grid-area:dress-code; }
+.tips       { grid-area:tips; }
+.prep       { grid-area:prep; }
+
+.budget, .dress-code, .tips, .prep {
+    background:#faf8f4;
+    border-radius:28px;
+    padding:10px;
 }
 
-#aboutMap{
-    width: fit-content; /* מצמצם לרוחב הטקסט */
-    padding: 12px 16px;
-    border: 1px solid #ccc;        
-    border-radius: 8px;
-    list-style: none;
-    font-weight: normal;
-    color: black;
-    margin-right: 530px;
-}
-
-
-
-#aboutMap a:hover{
-    text-decoration: underline;
-    text-underline-offset: 3px;
+.date-layout .link{
+    grid-area: link;          /* מציב בשורת ה־link */
+    justify-self: start;      /* יישור לימין ב־RTL */
+    align-self: end;          /* נדבק לתחתית השורה */
+    display: inline-block;
+    font-weight: 600;
+    margin-top: 8px;
 }
 
 
