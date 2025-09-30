@@ -1,95 +1,89 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
-    <head>
-        <meta charset="utf-8" />
-        <title>Pick a Date - דייטים בפנים</title>
-        <meta name="description" content="בחרו את סוג הדייט שמתאים לכם בפנים" />
-        <meta name="keywords" content="דייט, בפנים, רגוע, אקטיבי" />
-        <meta name="author" content="רומי מילר, נעם טואטי, לינור ביטון, דן כהן" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-        <link rel="icon" href="Images/Logo and main images/Favicon.png"/>
-        
-        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css" integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47" crossorigin="anonymous">
-        <link href="styles/myStyle.css" rel="stylesheet" />
-        
-        <script src="jScripts/jquery-1.12.0.min.js"></script>
-    </head>
-    <body>
-        <div id="container">
-            <header>
-                <nav aria-label="mainNav">
-                    <ul>
-                        <li id="logo">
-                            <a href="index.html">
-                                <img src="Images/logo.png" alt="לוגו האתר - חץ עם לב" />
-                            </a>
-                        </li>
-                        <li>
-                            <a href="insideChillDates.html">דייט רגוע בפנים</a>
-                            <ul class="innerNav">
-                                <li><a href="homeDateContent.html">דייט רומנטי לאור נרות</a></li>
-                                <li><a class="noActive" href="#">סרט בקולנוע</a></li>
-                                <li><a class="noActive" href="#">סדנת ציור זוגית</a></li>
-                                <li><a class="noActive" href="#">ספא זוגי</a></li>
-                            </ul>
-                        </li>
-                        <li><a class="navNoActive" href="#">דייט רגוע בחוץ</a>
-                            <ul class="innerNav">
-                                <li><a class="noActive" href="#">פיקניק בשקיעה</a></li>
-                                <li><a class="noActive" href="#">סירת פדלים בירקון</a></li>
-                                <li><a class="noActive" href="#">עגלת קפה</a></li>
-                                <li><a class="noActive" href="#">צפייה בכוכבים</a></li>
-                            </ul>
-                        </li>
-                        <li><a class="navNoActive" href="#">דייט אקטיבי בפנים</a>
-                            <ul class="innerNav">
-                                <li><a class="noActive" href="#">fly box</a></li>
-                                <li><a class="noActive" href="#">חדר בריחה</a></li>
-                                <li><a class="noActive" href="#">I JUMP</a></li>
-                                <li><a class="noActive" href="#">לייזר טאג</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="outsideActivDates.html">דייט אקטיבי בחוץ</a>
-                            <ul class="innerNav">
-                                <li><a href="waterSkiDateContent.html">סקי מים</a></li>
-                                <li><a class="noActive" href="#">קארטינג</a></li>
-                                <li><a class="noActive" href="#">פיינטבול</a></li>
-                                <li><a class="noActive" href="#">סנפלינג</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="siteMap.html">מפת האתר</a></li>
-                        <li><a href="contactUs.html">צור קשר</a></li>
-                        <li><a href="about.html">אודות</a></li>
+<head>
+    <meta charset="utf-8"/>
+    <title>Pick a Date - דייטים בפנים</title>
+    <meta name="description" content="בחרו את סוג הדייט שמתאים לכם בפנים"/>
+    <meta name="keywords" content="דייט, בפנים, רגוע, אקטיבי"/>
+    <meta name="author" content="רומי מילר, נעם טואטי, לינור ביטון, דן כהן"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/>
+    <link rel="icon" href="Images/Logo and main images/Favicon.png"/>
+    <link href="styles/myStyle.css" rel="stylesheet"/>
+</head>
+<body>
+<div id="container">
+    <header>
+        <nav aria-label="mainNav">
+            <ul>
+                <li id="logo">
+                    <a href="index.html">
+                        <img src="Images/Logo and main images/Logo.png" alt="לוגו האתר - חץ עם לב"/>
+                    </a>
+                </li>
+                <li><a href="insideChillDates.html">דייט רגוע בפנים</a>
+                    <ul class="innerNav">
+                        <li><a href="homeDateContent.html">דייט רומנטי לאור נרות</a></li>
+                        <li><a class="noActive" href="#">סרט בקולנוע</a></li>
+                        <li><a class="noActive" href="#">סדנת ציור זוגית</a></li>
+                        <li><a class="noActive" href="#">ספא זוגי</a></li>
                     </ul>
-                </nav>
-            </header>
-            <main class="page-content">
-                <nav class="breadCrumbs" aria-label="Breadcrumb">
-                    <ol>
-                        <li><a href="index.html">דף הבית</a></li>
-                        <li><a href="insideOut.html">בחירת סוג בילוי</a></li>
-                        <li aria-current="page">דייט בפנים</li>
-                    </ol>
-                </nav>
-                <h1>בחרתם דייט בפנים</h1>
-                <h2>מה האווירה שלכם היום?</h2>
-                <img src="Images/inside.png" alt="לב בפנים" class="centered-image home-image" />
-                <div class="choice-buttons">
-                    <a href="#" class="action-button noActive">אקטיבי</a>
-                    <a href="insideChillDates.html" class="action-button">רגוע</a>
-                </div>
-            </main>
-            <footer>
-                <p>&copy; 2025 Pick a Date. כל הזכויות שמורות.</p>
-                <p>
-                    <a href="about.html">אודות</a> |
-                    <a href="contactUs.html">צור קשר</a> |
-                    <a href="siteMap.html">מפת האתר</a>
-                </p>
-                <img id="HITlogo" src="Images/logoHIT.png" alt="לוגו המכון הטכנולוגי חולון - HIT" title="המכון הטכנולוגי חולון - HIT">
-            </footer>
+                </li>
+                <li><a class="noActive" href="#">דייט רגוע בחוץ</a>
+                    <ul class="innerNav">
+                        <li><a class="noActive" href="#">פיקניק בשקיעה</a></li>
+                        <li><a class="noActive" href="#">סירת פדלים בירקון</a></li>
+                        <li><a class="noActive" href="#">עגלת קפה</a></li>
+                        <li><a class="noActive" href="#">צפייה בכוכבים</a></li>
+                    </ul>
+                </li>
+                <li><a class="noActive" href="#">דייט אקטיבי בפנים</a>
+                    <ul class="innerNav">
+                        <li><a class="noActive" href="#">fly box</a></li>
+                        <li><a class="noActive" href="#">חדר בריחה</a></li>
+                        <li><a class="noActive" href="#">I JUMP</a></li>
+                        <li><a class="noActive" href="#">לייזר טאג</a></li>
+                    </ul>
+                </li>
+                <li><a href="outsideActivDates.html">דייט אקטיבי בחוץ</a>
+                    <ul class="innerNav">
+                        <li><a href="waterSkiDateContent.html">סקי מים</a></li>
+                        <li><a class="noActive" href="#">קארטינג</a></li>
+                        <li><a class="noActive" href="#">פיינטבול</a></li>
+                        <li><a class="noActive" href="#">סנפלינג</a></li>
+                    </ul>
+                </li>
+                <li><a href="siteMap.html">מפת האתר</a></li>
+                <li><a href="contactUs.html">צור קשר</a></li>
+                <li><a href="about.html">אודות</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="page-content">
+        <nav class="breadCrumbs" aria-label="Breadcrumb">
+            <ol>
+                <li><a href="index.html">דף הבית</a></li>
+                <li><a href="insideOut.html">בחירת סוג בילוי</a></li>
+                <li aria-current="page">דייט בפנים</li>
+            </ol>
+        </nav>
+        <h1>בחרתם דייט בפנים</h1>
+        <h2>מה האווירה שלכם היום?</h2>
+        <img src="Images/Logo and main images/inside.png" alt="לב חצוי של דייטים בפנים עם פעילויות אקטיביות או רגועות " class="centered-imagehome-image"/>
+        <div class="choice-buttons">
+            <a href="#" class="action-button noActive">אקטיבי</a>
+            <a href="insideChillDates.html" class="action-button">רגוע</a>
         </div>
-    </body>
+    </main>
+    <footer>
+        <p>&copy; 2025 Pick a Date. כל הזכויות שמורות.</p>
+        <p>
+            <a href="about.html">אודות</a> |
+            <a href="contactUs.html">צור קשר</a> |
+            <a href="siteMap.html">מפת האתר</a>
+        </p>
+        <img id="HITlogo" src="Images/Logo and main images/logoHIT.png" alt="HIT - לוגו המכון הטכנולוגי חולון"
+             title="HIT - המכון הטכנולוגי חולון"/>
+    </footer>
+</div>
+</body>
 </html>
-
