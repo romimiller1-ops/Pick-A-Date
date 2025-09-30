@@ -273,7 +273,7 @@ a.noActive, a.navNoActive, .icon-itemnoActive{
 
 .site-map {
     display: flex;
-    gap: 18px;
+    gap: 12px;
     justify-content: center;
     margin-top: 40px;
 }
@@ -281,6 +281,8 @@ a.noActive, a.navNoActive, .icon-itemnoActive{
 .site-map > li > ul {
     display: flex;
     flex-direction: column; /* במקום לסדר את האלמנטים בשורה אופקית, פקודה זו מסדרת אותם בעמודה אנכית כלומר, אחד מתחת לשני */
+    gap: 8px;
+    margin-top: 8px;
 }
 
 .site-map a {
@@ -384,12 +386,14 @@ div > label > span, legend>span {
     padding: 28px;
     font-size: 0;
     border-radius: 8px;
+    margin-right: 50px;
+    margin-left: 50px;
 }
 
 .budget, .dress-code, .tips, .prep {
     display: inline-block;
     width: 48%;
-    height: 250px;
+    height: 220px;
     margin: 1%;
     vertical-align: top;/* תכונה שמגדירה יישור אנכי של רכיבים פר שורה */
     background: #faf8f4;
