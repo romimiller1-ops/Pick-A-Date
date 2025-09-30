@@ -224,7 +224,7 @@ a.noActive, a.navNoActive, .icon-itemnoActive{
 .icon-grid {
     display: flex; /*  מסדר את הפריטים בשורה אחת באופן גמיש*/
     justify-content: center;
-    gap: 40px;
+    gap: 20px;
     padding: 40px 0;
     align-items: center;
 }
